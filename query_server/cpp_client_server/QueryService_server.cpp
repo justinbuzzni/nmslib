@@ -175,8 +175,9 @@ class QueryServiceHandler : virtual public QueryServiceIf {
 
   void rangeQuery(ReplyEntryList& _return, const double r, const string& queryObjStr, 
                   const bool retExternId, const bool retObj) {
+    // remove lock  - I think that it is no effect.
     // This will increase the counter and prevent modification of query time parameters.
-    LockedCounterManager  mngr(counter_, mtx_);
+    //LockedCounterManager  mngr(counter_, mtx_);
 
     try {
       if (debugPrint_) {
@@ -296,8 +297,9 @@ class QueryServiceHandler : virtual public QueryServiceIf {
 
   void knnQuery(ReplyEntryList& _return, const int32_t k, 
                 const std::string& queryObjStr, const bool retExternId, const bool retObj) {
+    // remove lock  - I think that it is no effect.
     // This will increase the counter and prevent modification of query time parameters.
-    LockedCounterManager  mngr(counter_, mtx_);
+    //LockedCounterManager  mngr(counter_, mtx_);
 
     try {
       if (debugPrint_) {
